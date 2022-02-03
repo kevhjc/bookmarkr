@@ -7,14 +7,17 @@ import cn from 'classnames'
 
 import { BookmarkIcon } from '@heroicons/react/outline'
 
-import Footer from '../components/Footer'
-
-interface Props {
+interface INavProps {
   href: string
   text: string
 }
 
-function NavItem({ href, text }: Props) {
+interface IContainerProps {
+  title: string
+  children: JSX.Element[] | JSX.Element
+}
+
+function NavItem({ href, text }: INavProps) {
   const router = useRouter()
   const isActive = router.asPath === href
 
@@ -34,7 +37,7 @@ function NavItem({ href, text }: Props) {
   )
 }
 
-function SignUp({ href, text }: Props) {
+function SignUp({ href, text }: INavProps) {
   const router = useRouter()
   const isActive = router.asPath === href
 
@@ -54,7 +57,7 @@ function SignUp({ href, text }: Props) {
   )
 }
 
-export default function Container(props: { children: any }) {
+export default function Container(props: IContainerProps) {
   const { children } = props
   const router = useRouter()
   const meta = {
