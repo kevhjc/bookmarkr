@@ -33,16 +33,16 @@ export default function Navbar() {
   const { data: session } = useSession()
 
   return (
-    <div className="mb-8 flex">
+    <div className="mb-8 flex flex-wrap">
       <div className="mb-4 w-full px-2 lg:w-1/2">
-        <div className="text-grey-dark flex h-12 items-center justify-start">
+        <div className="text-grey-dark flex h-12 items-center justify-center lg:justify-start">
           <nav className="space-x-4 md:block">
             <NavItem href="/" text="Bookmarkr" />
           </nav>
         </div>
       </div>
       <div className="w-full px-2 lg:w-1/2">
-        <div className="text-grey-dark flex h-12 items-center justify-end">
+        <div className="text-grey-dark flex h-12 items-center justify-center lg:justify-end">
           <nav className="space-x-4 md:block">
             <NavItem href="/about" text="About" />
             {!session ? (
