@@ -13,7 +13,7 @@ export default function Submit() {
 
   return (
     <>
-      <div className="my-4 w-full min-w-[400px] rounded border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl">
+      <div className="my-4 w-full rounded border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl">
         <form className="relative my-1">
           <input
             aria-label="Submit a URL"
