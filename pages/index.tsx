@@ -8,7 +8,7 @@ import Submit from '../components/Submit'
 
 export default function Home() {
   return (
-    <Container>
+    <Container title={'About'}>
       <Submit />
       <div className="container mx-auto mt-8 transform gap-4 rounded border border-gray-200 bg-gray-50 p-1">
         <div className="px-2 py-2 sm:px-3">
