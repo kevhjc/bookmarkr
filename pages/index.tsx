@@ -1,82 +1,172 @@
-import Head from 'next/head'
+import Link from 'next/link'
+import { Menu, Popover, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/solid'
+import { Fragment } from 'react'
+
+import Container from '../components/Container'
+import Submit from '../components/Submit'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <Container>
+      <Submit />
+      <div className="container mx-auto mt-8 transform gap-4 rounded border border-gray-200 bg-gray-50 p-1">
+        <div className="px-2 py-2 sm:px-3">
+          <h3 className="text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
+            <Link href="https://www.joshwcomeau.com/shadow-palette/">
+              <a>https://www.joshwcomeau.com/shadow-palette/</a>
+            </Link>
+          </h3>
+          <p className="mt-1 mb-3 max-w-2xl text-sm text-gray-500">
+            Create a set of lush, realistic CSS shadows.
+          </p>
+          <div className="bt-1 flex flex-col border-t pt-2">
+            <div>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #tool
+              </span>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #css
+              </span>
+            </div>
+          </div>
         </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="ml-2 h-4" />
-        </a>
-      </footer>
-    </div>
+      </div>
+      <div className="container mx-auto mt-4 gap-4 rounded border border-gray-200 bg-gray-50 p-1">
+        <div className="px-2 py-2 sm:px-3">
+          <h3 className="text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
+            <Link href="https://www.wallpaper.com/design/apple-park-behind-the-scenes-design-team-interview">
+              <a>
+                https://www.wallpaper.com/design/apple-park-behind-the-scenes-design-team-interview
+              </a>
+            </Link>
+          </h3>
+          <p className="mt-1 mb-3 max-w-2xl text-sm text-gray-500">
+            Inside Apple Park: first look at the design team shaping the future
+            of tech
+          </p>
+          <div className="bt-1 flex flex-col border-t pt-2">
+            <div>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #apple
+              </span>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #office
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto mt-4 gap-4 rounded border border-gray-200 bg-gray-50 p-1">
+        <div className="px-2 py-2 sm:px-3">
+          <h3 className="text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
+            <Link href="https://headlessui.dev/react/popover">
+              <a>https://headlessui.dev/react/popover</a>
+            </Link>
+          </h3>
+          <p className="mt-1 mb-3 max-w-2xl text-sm text-gray-500">
+            Popovers are perfect for floating panels with arbitrary content like
+            navigation menus, mobile menus and flyout menus.
+          </p>
+          <div className="bt-1 flex flex-col border-t pt-2">
+            <div>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #ui
+              </span>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #css
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto mt-4  gap-4 rounded border border-gray-200 bg-gray-50 p-1">
+        <div className="px-2 py-2 sm:px-3">
+          <h3 className="text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
+            <Link href="https://cmhb.de/minimal-email-setup">
+              <a>https://cmhb.de/minimal-email-setup</a>
+            </Link>
+          </h3>
+          <p className="mt-1 mb-3 max-w-2xl text-sm text-gray-500">
+            Some people love emails. Some people hate them. Most of us
+            experience both emotions.
+          </p>
+          <div className="bt-1 flex flex-col border-t pt-2">
+            <div>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #inbox-zero
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto mt-4  gap-4 rounded border border-gray-200 bg-gray-50 p-1">
+        <div className="px-2 py-2 sm:px-3">
+          <h3 className="text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
+            <Link href="https://brianlovin.com/writing/how-my-website-works">
+              <a>https://brianlovin.com/writing/how-my-website-works</a>
+            </Link>
+          </h3>
+          <p className="mt-1 mb-3 max-w-2xl text-sm text-gray-500">
+            My personal website is an over-engineered playground where I can
+            tinker, learn new things, test new tools, break all the rules, and
+            just scratch that itch deep in my brain that wants to understand how
+            the hell web software works.
+          </p>
+          <div className="bt-1 flex flex-col border-t pt-2">
+            <div>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #blog
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto mt-4  gap-4 rounded border border-gray-200 bg-gray-50 p-1">
+        <div className="px-2 py-2 sm:px-3">
+          <h3 className="text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
+            <Link href="https://www.arun.is/blog/double-queue/">
+              <a>https://www.arun.is/blog/double-queue/</a>
+            </Link>
+          </h3>
+          <p className="mt-1 mb-3 max-w-2xl text-sm text-gray-500">
+            We live in the age of never-ending content. Whether it’s essays,
+            newsletters, videos, podcasts, or video games, there is far more out
+            there than we could ever consume in a lifetime.
+          </p>
+          <div className="bt-1 flex flex-col border-t pt-2">
+            <div>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #productivity
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto mt-4  gap-4 rounded border border-gray-200 bg-gray-50 p-1">
+        <div className="px-2 py-2 sm:px-3">
+          <h3 className="text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
+            <Link href="https://www.jjabespoke.com/analogue-hq-hong-kong">
+              <a>https://www.jjabespoke.com/analogue-hq-hong-kong</a>
+            </Link>
+          </h3>
+          <p className="mt-1 mb-3 max-w-2xl text-sm text-gray-500">
+            Analogue, a Seattle-based game console design and fabrications
+            company has finally moved into their own Asia headquarters in the
+            heart of Hong Kong’s busy shopping district, Causeway Bay.
+          </p>
+          <div className="bt-1 flex flex-col border-t pt-2">
+            <div>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #interior-design
+              </span>
+              <span className="m-1 rounded bg-gray-200 p-1 font-mono text-sm font-medium leading-snug tracking-tight text-gray-500 transition duration-300 hover:shadow-md">
+                #office
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
   )
 }
