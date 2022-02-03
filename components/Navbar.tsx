@@ -9,11 +9,6 @@ interface INavProps {
   text: string
 }
 
-interface IAuthProps {
-  text: string
-  onClick: () => void
-}
-
 function NavItem({ href, text }: INavProps) {
   const router = useRouter()
   const isActive = router.asPath === href
@@ -25,7 +20,7 @@ function NavItem({ href, text }: INavProps) {
           isActive
             ? 'text-gray-darkest font-medium'
             : 'font-medium text-gray-500',
-          'rounded-lg p-2 text-gray-900 transition-all hover:bg-blue-100'
+          'rounded p-2 text-gray-900 transition-all hover:bg-blue-100'
         )}
       >
         <span className="capsize">{text}</span>
@@ -53,14 +48,14 @@ export default function Navbar() {
             {!session ? (
               <button
                 onClick={() => signIn('github')}
-                className="rounded-lg bg-blue-600 p-1 px-3 font-bold text-white transition-all hover:bg-blue-700"
+                className="rounded bg-blue-600 p-1 px-3 font-bold text-white transition-all hover:bg-blue-700"
               >
                 Sign in
               </button>
             ) : (
               <button
                 onClick={() => signOut()}
-                className="rounded-lg bg-red-600 p-1 px-3 font-bold text-white transition-all hover:bg-red-700"
+                className="rounded bg-red-600 p-1 px-3 font-bold text-white transition-all hover:bg-red-700"
               >
                 Sign out
               </button>
