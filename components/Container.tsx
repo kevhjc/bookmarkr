@@ -11,7 +11,7 @@ export default function Container(props: IContainerProps) {
   const { children } = props
 
   return (
-    <div className="container mx-auto min-w-[500px] max-w-[800px] p-8">
+    <div className="container mx-auto max-w-[800px] p-8">
       <Navbar />
       <main id="skip" className="flex flex-col justify-center">
         {children}
