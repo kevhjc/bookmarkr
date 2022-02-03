@@ -62,9 +62,9 @@ export default function Submit() {
         </form>
         {!session ? (
           <p className="mt-4 font-mono text-sm text-gray-600">
-            Please sign in with GitHub to add a bookmark to the feed. Your
-            information is only used to display your name and link to your
-            profile.
+            Hey there! Please sign in with <b>GitHub</b> to add a bookmark to
+            the feed. Your information is only used to display your name and
+            link to your profile.
           </p>
         ) : null}
       </div>
