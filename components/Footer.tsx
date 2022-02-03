@@ -1,6 +1,12 @@
 import Link from 'next/link'
 
-const ExternalLink = ({ href, children }) => (
+interface Props {
+  href: string
+  text: string
+  children: any
+}
+
+const ExternalLink = ({ href, children }: Props) => (
   <a
     className="text-gray-500 transition hover:text-gray-600"
     target="_blank"
