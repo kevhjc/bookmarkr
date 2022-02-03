@@ -1,35 +1,56 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { useSession } from 'next-auth/react'
+import cn from 'classnames'
 
 export default function Submit() {
+  const { data: session } = useSession()
+
   return (
     <>
-      <div className="my-4 w-full rounded border border-blue-200 bg-blue-50 p-4 transition duration-300 hover:translate-y-2 hover:shadow-lg">
+      <div className="my-4 w-full rounded border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl">
         <form className="relative my-1">
           <input
-            aria-label="Add a URL"
-            placeholder="URL"
+            aria-label="Submit a URL to the feed"
+            placeholder="Submit a URL to the feed"
             type="url"
             autoComplete="url"
             required
-            className="mt-1 block w-full rounded-md border-gray-300 bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            disabled={session ? false : true}
+            className={cn(
+              session
+                ? 'mt-1 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500'
+                : 'mt-1 block w-full rounded-md bg-gray-200 px-4 py-2 pr-32'
+            )}
           />
-          <button
-            className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-gray-200 px-4 font-medium transition-all hover:bg-gray-300"
-            type="submit"
-          >
-            Add
-          </button>
+          {session ? (
+            <button
+              className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-gray-200 px-4 font-medium transition-all hover:bg-gray-300"
+              type="submit"
+            >
+              Submit
+            </button>
+          ) : null}
           <input
-            aria-label="Add a tag or multiple tags"
-            placeholder="Tags"
+            aria-label="Add one or multiple hashtags"
+            placeholder="Add some #hashtags"
             type="hashtag"
             autoComplete="hashtag"
-            required
-            className="mt-3 block w-full rounded-md border-gray-300 bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+            disabled={session ? false : true}
+            className={cn(
+              session
+                ? 'mt-2 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500'
+                : 'mt-2 block w-full rounded-md bg-gray-200 px-4 py-2 pr-32'
+            )}
           />
         </form>
+        {!session ? (
+          <p className="mt-4 font-mono text-sm text-gray-600">
+            Please sign in with GitHub to add a bookmark to the feed. Your
+            information is only used to display your name and link to your
+            profile.
+          </p>
+        ) : null}
       </div>
     </>
   )
