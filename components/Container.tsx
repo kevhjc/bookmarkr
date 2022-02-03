@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { useTheme } from 'next-themes'
 
 import Navbar from '../components/Navbar'
@@ -10,7 +9,6 @@ interface IContainerProps {
 
 export default function Container(props: IContainerProps) {
   const { children } = props
-  const router = useRouter()
 
   return (
     <div className="container mx-auto min-w-[500px] max-w-[800px] p-8">
