@@ -2,9 +2,9 @@ import Link from 'next/link'
 
 export default function Bookmark() {
   return (
-    <div className="container mx-auto mt-8 transform gap-4 rounded border border-gray-200 bg-gray-50 p-1 duration-300 hover:shadow-sm">
+    <div className="mx-auto mt-8 w-full min-w-[400px] transform gap-4 rounded border border-gray-200 bg-gray-50 p-1 duration-300 hover:shadow-sm">
       <div className="px-2 py-2 sm:px-3">
-        <h3 className="text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
+        <h3 className="break-words text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
           <Link href="https://www.example.com/">
             <a>https://www.example.com/</a>
           </Link>
