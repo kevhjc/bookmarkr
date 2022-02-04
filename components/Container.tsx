@@ -1,6 +1,7 @@
 import { useTheme } from 'next-themes'
 
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 interface IContainerProps {
   title?: string
@@ -16,6 +17,7 @@ export default function Container(props: IContainerProps) {
       <main id="skip" className="flex flex-col justify-center">
         {children}
       </main>
+      <Footer />
     </div>
   )
 }
