@@ -6,7 +6,6 @@ export default async function assetHandler(
   res: NextApiResponse
 ) {
   const { method } = req
-
   switch (method) {
     case 'GET':
       try {
