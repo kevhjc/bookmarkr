@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getSession } from 'next-auth/react'
 import prisma from '../../lib/prisma'
 
 export default async function assetHandler(
@@ -11,15 +10,21 @@ export default async function assetHandler(
   switch (method) {
     case 'GET':
       try {
-        const bookmarks = await prisma.bookmark.findMany()
+        const bookmarks = await prisma.bookmark.findMany({
+          orderBy: [
+            {
+              createdAt: 'desc',
+            },
+          ],
+        })
         return res.status(200).json(bookmarks)
       } catch (e) {
         console.error('Request error', e)
-        res.status(500).json({ error: 'Error fetching posts' })
+        res.status(500).json({ error: 'Error fetching bookmarks' })
       }
       break
     default:
-      res.setHeader('Allow', ['GET'])
+      res.setHeader('Allow', ['GET', 'POST'])
       res.status(405).end(`Method ${method} not allowed`)
       break
   }
