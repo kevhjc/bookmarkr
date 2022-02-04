@@ -1,13 +1,11 @@
-import useSWR, { useSWRConfig } from 'swr'
+import useSWR from 'swr'
 import axios from 'axios'
-import { useSession } from 'next-auth/react'
+import { format } from 'date-fns'
 import Link from 'next/link'
 
 const fetcher = (url: string) => axios.get(url).then((res) => res.data)
 
 export default function Bookmark() {
-  const { data: session } = useSession()
-  const { mutate } = useSWRConfig()
   const { data: bookmarks } = useSWR('/api/bookmark', fetcher)
 
   return (
@@ -22,11 +20,15 @@ export default function Bookmark() {
             </h3>
             <div className="bt-1 mt-3 flex flex-col border-t pt-2">
               <div>
-                <p className="mb-2 max-w-2xl text-sm tracking-tight text-gray-500">
+                <p className="mb-2 max-w-2xl tracking-tight text-gray-700">
                   {bookmark.note}
                 </p>
                 <p className="max-w-2xl font-mono text-sm tracking-tight text-gray-500">
-                  {bookmark.user} – {bookmark.createdAt}
+                  {bookmark.user} –{' '}
+                  {format(
+                    new Date(bookmark.createdAt),
+                    "MMM d, yyyy '/' h:mm bb"
+                  )}
                 </p>
               </div>
             </div>
