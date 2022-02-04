@@ -7,7 +7,7 @@ import { format } from 'date-fns'
 const fetcher = (url: string) => axios.get(url).then((res) => res.data)
 
 export default function Bookmark() {
-  const { data: bookmarks } = useSWR('/api/feed', fetcher)
+  const { data: bookmarks } = useSWR('/api/bookmark', fetcher)
 
   return (
     <div className="mt-4 space-y-8">
