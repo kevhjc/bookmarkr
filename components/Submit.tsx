@@ -82,7 +82,7 @@ export default function Submit() {
             aria-label="Add a note"
             placeholder="Add a note"
             type="note"
-            maxLength={50}
+            maxLength={100}
             disabled={session ? false : true}
             className={cn(
               session
@@ -93,14 +93,14 @@ export default function Submit() {
           />
           <span
             className={cn(
-              count <= 25
+              count <= 75
                 ? 'absolute right-1 top-12 flex h-8 items-end justify-end px-1 pt-2 font-medium text-gray-400 transition-all'
-                : count > 25 && count <= 40
+                : count > 90 && count <= 100
                 ? 'absolute right-1 top-12 flex h-8 items-end justify-end px-1 pt-2 font-bold text-orange-400 transition-all'
                 : 'absolute right-1 top-12 flex h-8 items-end justify-end px-1 pt-2 font-bold text-red-400 transition-all'
             )}
           >
-            {count} / 50
+            {count} / 100
           </span>
         </form>
         {!session ? (
