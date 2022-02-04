@@ -5,18 +5,6 @@ import useSWR from 'swr'
 import axios from 'axios'
 import { format } from 'date-fns'
 
-// function useBookmark() {
-//   const fetcher = (url: string) => axios.get(url).then((res) => res.data)
-//   const { data: bookmarks, error } = useSWR('/api/bookmark', fetcher)
-
-//   return {
-//     user: bookmarks.name,
-//     image: bookmarks.image,
-//     url: bookmarks.url,
-//     note: bookmarks.note,
-//   }
-// }
-
 export default function Bookmark() {
   const fetcher = (url: string) => axios.get(url).then((res) => res.data)
   const { data: bookmarks, error } = useSWR('/api/bookmark', fetcher)
