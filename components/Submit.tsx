@@ -89,8 +89,8 @@ export default function Submit() {
               count <= 75
                 ? 'absolute right-1 top-12 flex h-8 items-end justify-end px-1 pt-2 font-medium text-gray-400 transition-all'
                 : count > 90 && count <= 100
-                ? 'absolute right-1 top-12 flex h-8 items-end justify-end px-1 pt-2 font-bold text-orange-400 transition-all'
-                : 'absolute right-1 top-12 flex h-8 items-end justify-end px-1 pt-2 font-bold text-red-400 transition-all'
+                ? 'absolute right-1 top-12 flex h-8 items-end justify-end px-1 pt-2 font-bold text-red-400 transition-all'
+                : 'absolute right-1 top-12 flex h-8 items-end justify-end px-1 pt-2 font-bold text-orange-400 transition-all'
             )}
           >
             {count} / 100
