@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { getSession } from 'next-auth/react'
 
 export default async (req, res) => {
