@@ -15,7 +15,7 @@ model Bookmark {
   createdAt     DateTime  @default(now()) @db.DateTime(6)
   updatedAt     DateTime  @updatedAt
   user          String    @db.VarChar(255)
-  image         String    @db.VarChar(255)
+  image         String?   @db.VarChar(255)
   url           String    @db.VarChar(255)
-  note          String    @db.VarChar(255)
+  note          String?   @db.VarChar(255)
 }
