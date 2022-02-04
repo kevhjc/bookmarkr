@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../lib/prisma'
 
-export default async function assetHandler(
+export default async function getFeed(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
