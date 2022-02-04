@@ -30,13 +30,16 @@ export default function Bookmark() {
               </p>
             </div>
             <div className="max-w-2x1 flex items-center gap-2 font-mono text-sm tracking-tight text-gray-500">
-              <Image
-                alt="User Avatar"
-                height={22}
-                width={22}
-                src={bookmark.image}
-                className="rounded-full"
-              />
+              {bookmark.image ? (
+                <Image
+                  alt="User Avatar"
+                  height={22}
+                  width={22}
+                  src={bookmark.image}
+                  placeholder="blur"
+                  className="rounded-full"
+                />
+              ) : null}
               {bookmark.user} –{' '}
               {format(new Date(bookmark.createdAt), "MMM d, yyyy '/' h:mm bb")}
             </div>
