@@ -11,7 +11,10 @@ export default function Bookmark() {
   return (
     <div className="mt-4 space-y-8">
       {bookmarks?.map((bookmark: any) => (
-        <div className="mx-auto mt-8 w-full transform gap-4 rounded border border-gray-200 bg-gray-50 p-1 duration-300 hover:shadow-sm">
+        <div
+          key={bookmark.id}
+          className="mx-auto mt-8 w-full transform gap-4 rounded border border-gray-200 bg-gray-50 p-1 duration-300 hover:shadow-sm"
+        >
           <div className="px-2 py-2 sm:px-3">
             <h3 className="break-words text-lg font-medium leading-6 text-blue-500 underline hover:no-underline">
               <Link href={bookmark.url}>
