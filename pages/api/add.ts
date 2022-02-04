@@ -26,6 +26,6 @@ async function addBookmark(req: NextApiRequest, res: NextApiResponse) {
     return res.status(200).json(result)
   } catch (error) {
     console.error('Request error', error)
-    res.status(500).json({ error: 'Error adding bookmark to feed' })
+    return res.status(500).json({ error: 'Error adding bookmark to feed' })
   }
 }
