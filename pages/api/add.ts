@@ -13,11 +13,12 @@ export default async function handler(
 }
 
 async function addBookmark(req: NextApiRequest, res: NextApiResponse) {
-  const { name, url, note } = req.body
+  const { name, image, url, note } = req.body
   try {
     const result = await prisma.bookmark.create({
       data: {
         user: name,
+        image: image,
         url: url,
         note: note,
       },
