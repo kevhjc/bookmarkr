@@ -6,6 +6,7 @@ export default async function assetHandler(
   res: NextApiResponse
 ) {
   const { method } = req
+
   switch (method) {
     case 'GET':
       try {
@@ -16,7 +17,7 @@ export default async function assetHandler(
             },
           ],
         })
-        return res.status(200).json(bookmarks)
+        res.status(200).json(bookmarks)
       } catch (e) {
         console.error('Request error', e)
         res.status(500).json({ error: 'Error fetching bookmarks' })
