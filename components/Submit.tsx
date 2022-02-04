@@ -1,7 +1,6 @@
 import { FormEvent, useRef, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import useSWR, { useSWRConfig } from 'swr'
-import sanitizeUrl from '@braintree/sanitize-url'
 import cn from 'classnames'
 
 export default function Submit() {
