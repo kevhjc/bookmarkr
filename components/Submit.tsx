@@ -1,6 +1,7 @@
 import { FormEvent, useRef, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import useSWR, { useSWRConfig } from 'swr'
+import sanitizeUrl from '@braintree/sanitize-url'
 import cn from 'classnames'
 
 export default function Submit() {
@@ -15,21 +16,13 @@ export default function Submit() {
     setCount(newVal)
   }
 
-  const handleAddHttp = (link: string | undefined) => {
-    if (link?.search(/^http[s]?\:\/\//) == -1) {
-      link = 'http://' + link
-    }
-    return link
-  }
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const urlCheck = handleAddHttp(urlInput?.current?.value)
     const res = await fetch('/api/add', {
       body: JSON.stringify({
         name: session?.user?.name,
         image: session?.user?.image,
-        url: urlCheck,
+        url: urlInput?.current?.value,
         note: noteInput?.current?.value,
       }),
       headers: {
