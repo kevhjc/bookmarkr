@@ -1,0 +1,5 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path id="Ellipse" fill="#fe5257" fill-rule="evenodd" stroke="none" d="M 810 360 C 810 260.588745 729.411255 180 630 180 C 530.588745 180 450 260.588745 450 360 C 450 459.411255 530.588745 540 630 540 C 729.411255 540 810 459.411255 810 360 Z"/>
+    <path id="Rectangle" fill="#027aff" fill-rule="evenodd" stroke="none" d="M 270 900 L 450 900 L 450 180 L 270 180 Z"/>
+    <path id="Ellipse-copy" fill="#fcb827" fill-rule="evenodd" stroke="none" d="M 810 720 C 810 620.588745 729.411255 540 630 540 C 530.588745 540 450 620.588745 450 720 C 450 819.411255 530.588745 900 630 900 C 729.411255 900 810 819.411255 810 720 Z"/>
+</svg>
