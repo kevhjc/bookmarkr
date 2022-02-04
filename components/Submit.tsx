@@ -1,21 +1,63 @@
-import { ChangeEvent, Fragment, useEffect, useRef, useState } from 'react'
+import { FormEvent, useRef, useState } from 'react'
 import { useSession } from 'next-auth/react'
+import useSWR, { useSWRConfig } from 'swr'
 import cn from 'classnames'
 
 export default function Submit() {
   const { data: session } = useSession()
+  const { mutate } = useSWRConfig()
   const [count, setCount] = useState(0)
+  const urlInput = useRef<HTMLInputElement>(null)
+  const noteInput = useRef<HTMLInputElement>(null)
 
-  const onChangeCount = (event: Event) => {
-    let newVal = (event.target as HTMLInputElement).value.length
+  const onChangeCount = (e: Event) => {
+    let newVal = (e.target as HTMLInputElement).value.length
     setCount(newVal)
+  }
+
+  const handleAddHttp = (link: string) => {
+    if (link.search(/^http[s]?\:\/\//) == -1) {
+      link = 'http://' + link
+    }
+    return link
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const res = await fetch('/api/add', {
+      body: JSON.stringify({
+        name: session?.user?.name,
+        image: session?.user?.image,
+        url: urlInput?.current?.value,
+        note: noteInput?.current?.value,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    })
+    const { error } = await res.json()
+    if (error) {
+      return
+    } else {
+      mutate('/api/add')
+      urlInput!.current!.value = ''
+      noteInput!.current!.value = ''
+      setCount(0)
+    }
   }
 
   return (
     <>
       <div className="my-4 w-full rounded border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl">
-        <form className="relative my-1">
+        <form
+          className="relative my-1"
+          action="#"
+          method="POST"
+          onSubmit={(e) => handleSubmit(e)}
+        >
           <input
+            ref={urlInput}
             aria-label="Submit a URL"
             placeholder="Submit a URL"
             type="url"
@@ -36,6 +78,7 @@ export default function Submit() {
             </button>
           ) : null}
           <input
+            ref={noteInput}
             aria-label="Add a note"
             placeholder="Add a note"
             type="note"
