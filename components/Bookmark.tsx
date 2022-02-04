@@ -36,7 +36,6 @@ export default function Bookmark() {
                   height={22}
                   width={22}
                   src={bookmark.image}
-                  placeholder="blur"
                   className="rounded-full"
                 />
               ) : null}
