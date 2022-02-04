@@ -107,7 +107,7 @@ export default function Submit() {
           <p className="mt-4 break-words font-mono text-sm text-gray-600">
             Hey there! Please sign in with <b>GitHub</b> to add a bookmark to
             the feed. Your information is only used to display your name and
-            link to your profile.
+            avatar.
           </p>
         ) : null}
       </div>
