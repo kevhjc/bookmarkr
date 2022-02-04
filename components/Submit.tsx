@@ -15,8 +15,8 @@ export default function Submit() {
     setCount(newVal)
   }
 
-  const handleAddHttp = (link: string) => {
-    if (link.search(/^http[s]?\:\/\//) == -1) {
+  const handleAddHttp = (link: string | undefined) => {
+    if (link?.search(/^http[s]?\:\/\//) == -1) {
       link = 'http://' + link
     }
     return link
@@ -24,11 +24,12 @@ export default function Submit() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const urlCheck = handleAddHttp(urlInput?.current?.value)
     const res = await fetch('/api/add', {
       body: JSON.stringify({
         name: session?.user?.name,
         image: session?.user?.image,
-        url: urlInput?.current?.value,
+        url: urlCheck,
         note: noteInput?.current?.value,
       }),
       headers: {
