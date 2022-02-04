@@ -1,14 +1,42 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import prisma from 'lib/prisma'
 import useSWR from 'swr'
 import axios from 'axios'
 import { format } from 'date-fns'
 
-const fetcher = (url: string) => axios.get(url).then((res) => res.data)
+// function useBookmark() {
+//   const fetcher = (url: string) => axios.get(url).then((res) => res.data)
+//   const { data: bookmarks, error } = useSWR('/api/bookmark', fetcher)
+
+//   return {
+//     user: bookmarks.name,
+//     image: bookmarks.image,
+//     url: bookmarks.url,
+//     note: bookmarks.note,
+//   }
+// }
 
 export default function Bookmark() {
-  const { data: bookmarks } = useSWR('/api/bookmark', fetcher)
+  const fetcher = (url: string) => axios.get(url).then((res) => res.data)
+  const { data: bookmarks, error } = useSWR('/api/bookmark', fetcher)
 
+  if (!bookmarks)
+    return (
+      <div className="mx-auto py-12 px-6">
+        <h1 className="flex items-center justify-center text-2xl font-black leading-snug tracking-tight">
+          Loading...
+        </h1>
+      </div>
+    )
+  if (error)
+    return (
+      <div className="mx-auto py-12 px-6">
+        <h1 className="flex items-center justify-center text-2xl font-black leading-snug tracking-tight">
+          Uh oh, something went wrong
+        </h1>
+      </div>
+    )
   return (
     <div className="mt-4 space-y-8">
       {bookmarks?.map((bookmark: any) => (

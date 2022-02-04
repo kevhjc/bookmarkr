@@ -1,6 +1,6 @@
 import { FormEvent, useRef, useState } from 'react'
 import { useSession } from 'next-auth/react'
-import useSWR, { useSWRConfig } from 'swr'
+import { useSWRConfig } from 'swr'
 import cn from 'classnames'
 
 export default function Submit() {
@@ -33,7 +33,7 @@ export default function Submit() {
     if (error) {
       return
     } else {
-      mutate('/api/add')
+      mutate('/api/bookmark')
       urlInput!.current!.value = ''
       noteInput!.current!.value = ''
       setCount(0)
