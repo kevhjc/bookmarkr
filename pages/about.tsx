@@ -9,7 +9,7 @@ export default function About() {
       <Head>
         <title>About – Bookmarkr</title>
       </Head>
-      <div className="container mx-auto py-12 px-6 dark:text-gray-200">
+      <div className="container mx-auto py-12 px-6 text-gray-900 dark:text-gray-200">
         <h1 className="mb-6 text-center text-4xl font-black leading-snug">
           {`What's Bookmarkr?`}
         </h1>
