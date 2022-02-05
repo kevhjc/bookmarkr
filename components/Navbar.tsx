@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
@@ -19,8 +18,8 @@ function NavItem({ href, text }: INavProps) {
       <a
         className={cn(
           isActive
-            ? 'font-medium text-gray-900'
-            : 'font-medium text-gray-500 dark:text-gray-200',
+            ? 'dar:text-gray-200 font-medium text-gray-900'
+            : 'font-medium text-gray-800 dark:text-gray-300',
           'rounded p-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
         )}
       >
@@ -40,7 +39,7 @@ function LogoNavItem({ href, text }: INavProps) {
         className={cn(
           isActive
             ? 'font-bold leading-snug tracking-tight text-gray-900 dark:text-gray-200'
-            : 'font-bold leading-snug tracking-tight text-gray-500 dark:text-gray-300',
+            : 'font-bold leading-snug tracking-tight text-gray-800 dark:text-gray-300',
           'flex items-center gap-2 rounded p-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
         )}
       >
