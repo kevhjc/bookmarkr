@@ -1,1 +1,1 @@
-# Bookmarkr v2
+# Bookmarkr
