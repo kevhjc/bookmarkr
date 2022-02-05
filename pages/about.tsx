@@ -10,7 +10,7 @@ export default function About() {
         <title>About – Bookmarkr</title>
       </Head>
       <div className="container mx-auto py-12 px-6 dark:text-gray-200">
-        <h1 className="mb-6 text-center text-4xl font-black leading-snug tracking-tight">
+        <h1 className="mb-6 text-center text-4xl font-black leading-snug">
           {`What's Bookmarkr?`}
         </h1>
         <p className="px-6 text-center text-lg">
@@ -20,7 +20,7 @@ export default function About() {
           </span>
           {` to portfolios, tools, etc. from around the web. Sign in with GitHub to get started!`}
         </p>
-        <h1 className="mt-12 mb-2 text-center text-4xl font-black leading-snug tracking-tight">
+        <h1 className="mt-12 mb-2 text-center text-4xl font-black leading-snug">
           {`What's the Stack?`}
         </h1>
         <ul className="px-6 text-center text-lg">
@@ -51,7 +51,7 @@ export default function About() {
           <b>{`Deployment: `}</b>
           {`Vercel`}
         </ul>
-        <h1 className="mt-12 mb-2 text-center text-4xl font-black leading-snug tracking-tight">
+        <h1 className="mt-12 mb-2 text-center text-4xl font-black leading-snug">
           {`Who made it?`}
         </h1>
         <p className="mb-6 px-6 text-center text-lg">
