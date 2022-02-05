@@ -42,7 +42,7 @@ export default function Submit() {
 
   return (
     <>
-      <div className="my-4 w-full rounded border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl">
+      <div className="my-4 w-full rounded border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl dark:border-gray-600 dark:bg-gray-800">
         <form
           className="relative my-1"
           action="#"
@@ -58,13 +58,13 @@ export default function Submit() {
             disabled={session ? false : true}
             className={cn(
               session
-                ? 'mt-1 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500'
-                : 'mt-1 block w-full rounded-md bg-gray-200 px-4 py-2 pr-32'
+                ? 'mt-1 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-black'
+                : 'mt-1 block w-full rounded-md bg-gray-200 px-4 py-2 pr-32 dark:bg-gray-600'
             )}
           />
           {session ? (
             <button
-              className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-gray-200 px-4 font-medium transition-all hover:bg-gray-300"
+              className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-gray-200 px-4 font-medium transition-all hover:bg-gray-300 dark:bg-gray-400 dark:hover:bg-gray-500"
               type="submit"
             >
               Submit
@@ -79,8 +79,8 @@ export default function Submit() {
             disabled={session ? false : true}
             className={cn(
               session
-                ? 'mt-2 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500'
-                : 'mt-2 block w-full rounded-md bg-gray-200 px-4 py-2 pr-32'
+                ? 'mt-2 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-black'
+                : 'mt-2 block w-full rounded-md bg-gray-200 px-4 py-2 pr-32 dark:bg-gray-600'
             )}
             onKeyUp={() => (event ? onChangeCount(event) : 0)}
           />
@@ -97,7 +97,7 @@ export default function Submit() {
           </span>
         </form>
         {!session ? (
-          <p className="mt-4 break-words font-mono text-sm text-gray-600">
+          <p className="mt-4 break-words font-mono text-sm text-gray-600 dark:text-gray-200">
             Hey there! Please sign in with <b>GitHub</b> if you would like to
             add a bookmark to the message board. Your information is only used
             to display your name and avatar.

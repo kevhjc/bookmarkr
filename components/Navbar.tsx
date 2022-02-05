@@ -18,8 +18,10 @@ function NavItem({ href, text }: INavProps) {
     <NextLink href={href}>
       <a
         className={cn(
-          isActive ? 'font-medium text-gray-900' : 'font-medium text-gray-500',
-          'rounded p-2 text-gray-900 transition-all hover:bg-blue-100'
+          isActive
+            ? 'font-medium text-gray-900'
+            : 'font-medium text-gray-500 dark:text-gray-200',
+          'rounded p-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
         )}
       >
         <span className="capsize">{text}</span>
@@ -37,9 +39,9 @@ function LogoNavItem({ href, text }: INavProps) {
       <a
         className={cn(
           isActive
-            ? 'font-bold leading-snug tracking-tight text-gray-900'
-            : 'font-bold leading-snug tracking-tight text-gray-500',
-          'flex items-center gap-2 rounded p-2 text-gray-900 transition-all hover:bg-blue-100'
+            ? 'font-bold leading-snug tracking-tight text-gray-900 dark:text-gray-200'
+            : 'font-bold leading-snug tracking-tight text-gray-500 dark:text-gray-300',
+          'flex items-center gap-2 rounded p-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
         )}
       >
         <Image src="/logo.svg" alt="Bookmarkr Logo" width={20} height={20} />
@@ -55,7 +57,7 @@ export default function Navbar() {
   return (
     <div className="mb-8 flex flex-wrap text-lg">
       <div className="mb-4 w-full px-2 lg:w-1/2">
-        <div className="text-grey-dark flex h-12 items-center justify-center lg:justify-start">
+        <div className="flex h-12 items-center justify-center lg:justify-start">
           <nav className="space-x-4 md:block">
             <LogoNavItem href="/" text="Bookmarkr" />
           </nav>
@@ -68,14 +70,14 @@ export default function Navbar() {
             {!session ? (
               <button
                 onClick={() => signIn('github')}
-                className="rounded bg-blue-600 p-1 px-3 text-white transition-all hover:bg-blue-700"
+                className="rounded bg-blue-600 p-1 px-3 text-white transition-all hover:bg-blue-700 dark:bg-blue-700 dark:text-gray-200 dark:hover:bg-blue-900"
               >
                 Sign in
               </button>
             ) : (
               <button
-                onClick={() => signOut()}
-                className="rounded bg-blue-600 p-1 px-3 text-white transition-all hover:bg-blue-700"
+                onClick={() => signIn('github')}
+                className="rounded bg-blue-600 p-1 px-3 text-white transition-all hover:bg-blue-700 dark:bg-blue-700 dark:text-gray-200 dark:hover:bg-blue-900"
               >
                 Sign out
               </button>
