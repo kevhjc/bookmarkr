@@ -25,11 +25,11 @@ export default function Bookmark() {
       </div>
     )
   return (
-    <div className="mt-4 space-y-8 transition-all hover:translate-y-1">
+    <div className="mt-4 space-y-8">
       {bookmarks?.map((bookmark: any) => (
         <div
           key={bookmark.id}
-          className="mx-auto mt-8 w-full transform gap-4 whitespace-normal rounded-lg border border-gray-200 bg-gray-50 p-1 duration-300 hover:shadow-sm dark:border-gray-600 dark:bg-gray-800"
+          className="mx-auto mt-8 w-full transform gap-4 whitespace-normal rounded-lg border border-gray-200 bg-gray-50 p-1 transition-all duration-300 hover:translate-y-1 hover:shadow-md dark:border-gray-600 dark:bg-gray-800"
         >
           <div className="mt-2 px-4 py-2">
             <h3>
