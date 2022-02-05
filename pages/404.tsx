@@ -6,7 +6,7 @@ export default function Custom404() {
   return (
     <Container>
       <div className="mx-auto py-12 px-6">
-        <h1 className="flex items-center justify-center text-4xl font-black leading-snug tracking-tight">
+        <h1 className="flex items-center justify-center text-4xl font-black leading-snug tracking-tight dark:text-gray-200">
           404 – Page not found
         </h1>
       </div>
