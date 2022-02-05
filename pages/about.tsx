@@ -56,12 +56,15 @@ export default function About() {
         </h1>
         <p className="mb-6 px-6 text-center text-lg">
           {`Built by `}
-          <a
-            href="https://www.kevc.xyz/"
-            className="underline hover:no-underline"
-          >
-            Kevin
-          </a>
+          <Link href="https://www.kevc.xyz/">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:no-underline"
+            >
+              {`Kevin`}
+            </a>
+          </Link>
           {' ✌️'}
         </p>
       </div>
