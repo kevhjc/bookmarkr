@@ -15,7 +15,7 @@ export default function Home() {
     <Container>
       <Head>
         <title>{meta.title}</title>
-        <link href="../public/favicon.ico" rel="shortcut icon" />
+        <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
         <meta property="og:site_name" content="Bookmarkr" />
