@@ -1,5 +1,4 @@
 import NextLink from 'next/link'
-import cn from 'classnames'
 
 import Container from '../components/Container'
 

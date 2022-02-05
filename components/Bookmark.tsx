@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import prisma from 'lib/prisma'
 import useSWR from 'swr'
 import axios from 'axios'
 import { format } from 'date-fns'
