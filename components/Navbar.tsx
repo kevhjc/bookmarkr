@@ -1,6 +1,8 @@
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
+import { useTheme } from 'next-themes'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import cn from 'classnames'
 
@@ -20,10 +22,10 @@ function NavItem({ href, text }: INavProps) {
           isActive
             ? 'dar:text-gray-200 font-medium text-gray-900'
             : 'font-medium text-gray-800 dark:text-gray-300',
-          'rounded p-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
+          'rounded p-2 px-3 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
         )}
       >
-        <span className="capsize">{text}</span>
+        <span>{text}</span>
       </a>
     </NextLink>
   )
@@ -52,31 +54,38 @@ function LogoNavItem({ href, text }: INavProps) {
 
 export default function Navbar() {
   const { data: session } = useSession()
+  const [mounted, setMounted] = useState(false)
+  const { resolvedTheme, setTheme } = useTheme()
+  useEffect(() => setMounted(true), [])
 
   return (
     <div className="mb-8 flex flex-wrap text-lg">
-      <div className="mb-4 w-full px-2 lg:w-1/2">
-        <div className="flex h-12 items-center justify-center lg:justify-start">
+      <div className="mb-4 w-full px-2 md:w-1/2 lg:w-1/2">
+        <div className="md-justify-start flex h-12 items-center justify-center md:justify-start lg:justify-start">
           <nav className="space-x-4 md:block">
             <LogoNavItem href="/" text="Bookmarkr" />
           </nav>
         </div>
       </div>
-      <div className="w-full px-2 lg:w-1/2">
-        <div className="text-grey-dark flex h-12 items-center justify-center lg:justify-end">
+      <div className="w-full px-2 md:w-1/2 lg:w-1/2">
+        <div className="text-grey-dark flex h-12 items-center justify-center md:justify-end lg:justify-end">
           <nav className="space-x-4 md:block">
             <NavItem href="/about" text="About" />
             {!session ? (
               <button
-                onClick={() => signIn('github')}
+                aria-label="Sign in"
+                type="button"
                 className="rounded bg-blue-600 p-1 px-3 text-white transition-all hover:bg-blue-700 dark:bg-blue-700 dark:text-gray-200 dark:hover:bg-blue-900"
+                onClick={() => signIn('github')}
               >
                 Sign in
               </button>
             ) : (
               <button
-                onClick={() => signIn('github')}
+                aria-label="Sign out"
+                type="button"
                 className="rounded bg-blue-600 p-1 px-3 text-white transition-all hover:bg-blue-700 dark:bg-blue-700 dark:text-gray-200 dark:hover:bg-blue-900"
+                onClick={() => signOut()}
               >
                 Sign out
               </button>

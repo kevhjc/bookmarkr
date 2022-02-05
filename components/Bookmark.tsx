@@ -12,7 +12,7 @@ export default function Bookmark() {
   if (!bookmarks)
     return (
       <div className="mx-auto py-12 px-6">
-        <h1 className="flex items-center justify-center text-2xl font-black leading-snug dark:text-gray-200">
+        <h1 className="flex items-center justify-center text-2xl font-black leading-snug text-gray-900 dark:text-gray-200">
           Loading...
         </h1>
       </div>
@@ -20,13 +20,13 @@ export default function Bookmark() {
   if (error)
     return (
       <div className="mx-auto py-12 px-6">
-        <h1 className="flex items-center justify-center text-2xl font-black leading-snug dark:text-gray-200">
+        <h1 className="flex items-center justify-center text-2xl font-black leading-snug text-gray-900 dark:text-gray-200">
           Uh oh, something went wrong
         </h1>
       </div>
     )
   return (
-    <div className="mt-4 space-y-8">
+    <div className="mt-4 space-y-8 transition-all hover:translate-y-1">
       {bookmarks?.map((bookmark: any) => (
         <div
           key={bookmark.id}
@@ -44,12 +44,12 @@ export default function Bookmark() {
                 </a>
               </Link>
             </h3>
-            <div className="my-2 flex flex-row pt-2 dark:border-gray-600">
+            <div className="my-2 flex flex-row pt-2">
               <p className="mb-2 max-w-2xl tracking-tight text-gray-700 dark:text-gray-200">
                 {bookmark.note}
               </p>
             </div>
-            <div className="max-w-2x1 flex items-center gap-2 border-t pt-4 pb-2 font-mono text-sm tracking-tight text-gray-500 dark:text-gray-400">
+            <div className="max-w-2x1 flex items-center gap-2 border-t pt-4 pb-2 font-mono text-sm tracking-tight text-gray-500 dark:border-gray-600 dark:text-gray-400">
               {bookmark.image ? (
                 <Image
                   alt="User Avatar"

@@ -42,7 +42,7 @@ export default function Submit() {
 
   return (
     <>
-      <div className="my-4 w-full rounded-lg border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl dark:border-gray-600 dark:bg-gray-900">
+      <div className="my-4 w-full rounded-lg border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
         <form
           className="relative my-1"
           action="#"
