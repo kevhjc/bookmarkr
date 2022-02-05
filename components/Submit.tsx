@@ -58,7 +58,7 @@ export default function Submit() {
             disabled={session ? false : true}
             className={cn(
               session
-                ? 'mt-1 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-600'
+                ? 'mt-1 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-600 dark:text-gray-200'
                 : 'mt-1 block w-full rounded-md bg-gray-200 px-4 py-2 pr-32 dark:bg-gray-700'
             )}
           />
@@ -79,7 +79,7 @@ export default function Submit() {
             disabled={session ? false : true}
             className={cn(
               session
-                ? 'mt-2 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-600'
+                ? 'mt-2 block w-full rounded-md bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-600 dark:text-gray-200'
                 : 'mt-2 block w-full rounded-md bg-gray-200 px-4 py-2 pr-32 dark:bg-gray-700'
             )}
             onKeyUp={() => (event ? onChangeCount(event) : 0)}
