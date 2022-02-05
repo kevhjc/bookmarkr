@@ -12,6 +12,11 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+          sizes="180x180"
+        />
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
         <meta property="og:title" content={meta.title} />
