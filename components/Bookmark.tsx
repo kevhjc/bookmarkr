@@ -35,7 +35,11 @@ export default function Bookmark() {
           <div className="px-2 py-2 sm:px-3">
             <h3>
               <Link href={bookmark.url}>
-                <a className="break-words text-lg font-medium text-blue-500 underline hover:no-underline">
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="break-words text-lg font-medium text-blue-500 underline hover:no-underline"
+                >
                   {bookmark.url}
                 </a>
               </Link>
