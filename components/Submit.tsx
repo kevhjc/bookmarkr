@@ -64,7 +64,7 @@ export default function Submit() {
           />
           {session ? (
             <button
-              className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-gray-200 px-4 font-medium text-gray-900 transition-all hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-900"
+              className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-gray-200 px-4 font-medium text-gray-900 transition-all hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-900"
               type="submit"
             >
               Submit
