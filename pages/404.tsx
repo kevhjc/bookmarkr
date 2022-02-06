@@ -11,7 +11,7 @@ export default function Custom404() {
         </h1>
       </div>
       <div className="mx-auto py-12 px-6">
-        <button className="h-12 rounded bg-gray-200 px-10 font-bold transition-all hover:bg-gray-300">
+        <button className="h-12 rounded bg-gray-200 px-10 font-bold transition-all hover:bg-gray-300 dark:bg-gray-500 dark:text-gray-200 dark:hover:bg-gray-600">
           <NextLink href="/">
             <a>Go home</a>
           </NextLink>
