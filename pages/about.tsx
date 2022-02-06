@@ -18,7 +18,7 @@ export default function About() {
           <span className="rounded bg-yellow-200 p-1 font-mono dark:bg-yellow-500 dark:text-gray-800">
             hyperlinks
           </span>
-          {` to portfolios, tools, etc. from around the web. Sign in with GitHub to get started!`}
+          {` to portfolios, tools, etc. from around the web. Sign in with GitHub to post a link!`}
         </p>
         <h1 className="mt-12 mb-2 text-center text-4xl font-black leading-snug">
           {`What's the Stack?`}
