@@ -4,7 +4,7 @@ export default function Document() {
   const meta = {
     title: 'Bookmarkr',
     description: `Social Bookmarking`,
-    image: 'https://bookmarkr.link/public/banner.png',
+    image: 'https://bookmarkr.link/banner.png',
     type: 'website',
   }
 
