@@ -98,9 +98,9 @@ export default function Submit() {
         </form>
         {!session ? (
           <p className="mt-4 break-words font-mono text-sm text-gray-600 dark:text-gray-200">
-            Hey there! Please sign in with <b>GitHub</b> if you would like to
-            add a bookmark to the message board. Your information is only used
-            to display your name and avatar.
+            Hey there! Sign in with <b>GitHub</b> to add a bookmark to the
+            message board. Your information is only used to display your name
+            and profile picture.
           </p>
         ) : null}
       </div>
