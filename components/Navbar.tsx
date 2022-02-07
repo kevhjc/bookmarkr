@@ -31,7 +31,7 @@ function NavItem({ href, text }: INavProps) {
     <NextLink href={href}>
       <a
         className={
-          'font-mediu rounded p-2 px-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
+          'rounded p-2 px-2 font-medium text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
         }
       >
         <span>{text}</span>
@@ -72,9 +72,9 @@ export default function Navbar() {
                 className={
                   'cursor-pointer gap-2 rounded p-2 px-2 font-medium text-gray-900 transition-all hover:bg-red-100 dark:text-gray-200 dark:hover:bg-red-600'
                 }
-                onClick={() => signIn('github')}
+                onClick={() => signOut()}
               >
-                Sign in
+                Sign out
               </a>
             )}
           </nav>
