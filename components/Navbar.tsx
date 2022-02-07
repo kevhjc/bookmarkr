@@ -20,8 +20,8 @@ function LogoNavItem({ href, text }: INavProps) {
       <a
         className={cn(
           isActive
-            ? 'font-black leading-snug tracking-tight text-gray-900 dark:text-gray-200'
-            : 'font-black leading-snug tracking-tight text-gray-800 dark:text-gray-300',
+            ? 'font-black leading-snug text-gray-900 dark:text-gray-200'
+            : 'font-black leading-snug text-gray-900 dark:text-gray-300',
           'flex items-center gap-2 rounded p-2 px-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
         )}
       >
@@ -41,8 +41,8 @@ function NavItem({ href, text }: INavProps) {
       <a
         className={cn(
           isActive
-            ? 'dar:text-gray-200 font-medium text-gray-900'
-            : 'font-medium text-gray-800 dark:text-gray-300',
+            ? 'font-medium text-gray-900 dark:text-gray-200'
+            : 'font-medium text-gray-900 dark:text-gray-200',
           'rounded p-2 px-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
         )}
       >
@@ -75,7 +75,7 @@ export default function Navbar() {
               <button
                 aria-label="Sign in"
                 type="button"
-                className="rounded bg-blue-500 p-1 px-2 font-medium text-gray-200 transition-all hover:bg-blue-700 dark:bg-blue-700 dark:text-gray-200 dark:hover:bg-blue-900"
+                className="rounded bg-blue-500 p-1 px-2 font-medium text-white transition-all hover:bg-blue-700 dark:bg-blue-700 dark:text-gray-200 dark:hover:bg-blue-900"
                 onClick={() => signIn('github')}
               >
                 Sign in
@@ -84,7 +84,7 @@ export default function Navbar() {
               <button
                 aria-label="Sign out"
                 type="button"
-                className="rounded p-1 px-2 font-medium text-gray-900 transition-all hover:bg-red-100 dark:bg-blue-700 dark:text-gray-200 dark:hover:bg-blue-900"
+                className="rounded p-1 px-2 font-medium text-gray-900 transition-all hover:bg-red-100 dark:text-gray-200 dark:hover:bg-red-600"
                 onClick={() => signOut()}
               >
                 Sign out
