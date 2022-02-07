@@ -64,7 +64,7 @@ export default function Navbar() {
                 }
                 onClick={() => signIn('github')}
               >
-                Sign in
+                <span>Sign in</span>
               </a>
             ) : (
               <a
@@ -74,7 +74,7 @@ export default function Navbar() {
                 }
                 onClick={() => signOut()}
               >
-                Sign out
+                <span>Sign out</span>
               </a>
             )}
           </nav>
