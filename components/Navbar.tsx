@@ -12,18 +12,12 @@ interface INavProps {
 }
 
 function LogoNavItem({ href, text }: INavProps) {
-  const router = useRouter()
-  const isActive = router.asPath === href
-
   return (
     <NextLink href={href}>
       <a
-        className={cn(
-          isActive
-            ? 'font-black leading-snug text-gray-900 dark:text-gray-200'
-            : 'font-black leading-snug text-gray-900 dark:text-gray-300',
-          'flex items-center gap-2 rounded p-2 px-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
-        )}
+        className={
+          'flex items-center gap-2 rounded p-1 px-2 font-bold text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
+        }
       >
         <Image src="/logo.svg" alt="Bookmarkr Logo" width={20} height={20} />
         {text}
@@ -33,18 +27,12 @@ function LogoNavItem({ href, text }: INavProps) {
 }
 
 function NavItem({ href, text }: INavProps) {
-  const router = useRouter()
-  const isActive = router.asPath === href
-
   return (
     <NextLink href={href}>
       <a
-        className={cn(
-          isActive
-            ? 'font-medium text-gray-900 dark:text-gray-200'
-            : 'font-medium text-gray-900 dark:text-gray-200',
-          'rounded p-2 px-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
-        )}
+        className={
+          'font-mediu rounded p-2 px-2 text-gray-900 transition-all hover:bg-blue-100 dark:text-gray-200 dark:hover:bg-blue-700'
+        }
       >
         <span>{text}</span>
       </a>
@@ -54,9 +42,6 @@ function NavItem({ href, text }: INavProps) {
 
 export default function Navbar() {
   const { data: session } = useSession()
-  const [mounted, setMounted] = useState(false)
-  const { resolvedTheme, setTheme } = useTheme()
-  useEffect(() => setMounted(true), [])
 
   return (
     <div className="mb-8 flex flex-wrap text-lg">
@@ -72,23 +57,25 @@ export default function Navbar() {
           <nav className="space-x-4 md:block">
             <NavItem href="/about" text="About" />
             {!session ? (
-              <button
+              <a
                 aria-label="Sign in"
-                type="button"
-                className="rounded bg-blue-500 p-1 px-2 font-medium text-white transition-all hover:bg-blue-700 dark:bg-blue-700 dark:text-gray-200 dark:hover:bg-blue-900"
+                className={
+                  'cursor-pointer gap-2 rounded bg-blue-500 p-2 px-2 font-medium text-white transition-all hover:bg-blue-700 hover:text-white dark:text-gray-200 dark:hover:bg-blue-700'
+                }
                 onClick={() => signIn('github')}
               >
                 Sign in
-              </button>
+              </a>
             ) : (
-              <button
+              <a
                 aria-label="Sign out"
-                type="button"
-                className="rounded p-1 px-2 font-medium text-gray-900 transition-all hover:bg-red-100 dark:text-gray-200 dark:hover:bg-red-600"
-                onClick={() => signOut()}
+                className={
+                  'cursor-pointer gap-2 rounded p-2 px-2 font-medium text-gray-900 transition-all hover:bg-red-100 dark:text-gray-200 dark:hover:bg-red-600'
+                }
+                onClick={() => signIn('github')}
               >
-                Sign out
-              </button>
+                Sign in
+              </a>
             )}
           </nav>
         </div>
