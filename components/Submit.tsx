@@ -2,6 +2,9 @@ import { FormEvent, useRef, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { useSWRConfig } from 'swr'
 import cn from 'classnames'
+import toast, { Toaster } from 'react-hot-toast'
+
+const notify = () => toast('Here is your toast.')
 
 export default function Submit() {
   const { data: session } = useSession()
@@ -31,12 +34,13 @@ export default function Submit() {
     })
     const { error } = await res.json()
     if (error) {
-      return
+      toast.error(`Uh oh, ${error.toString()}`)
     } else {
       mutate('/api/bookmark')
       urlInput!.current!.value = ''
       noteInput!.current!.value = ''
       setCount(0)
+      toast.success('Bookmark added')
     }
   }
 
@@ -58,8 +62,8 @@ export default function Submit() {
             disabled={session ? false : true}
             className={cn(
               session
-                ? 'mt-1 block w-full rounded-lg bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-600 dark:text-gray-200'
-                : 'mt-1 block w-full rounded-lg bg-gray-200 px-4 py-2 pr-32 dark:bg-gray-700'
+                ? 'mt-1 block w-full rounded-lg bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-500 dark:text-gray-200'
+                : 'mt-1 block w-full rounded-lg bg-gray-200 px-4 py-2 pr-32 dark:bg-gray-800'
             )}
           />
           {session ? (
@@ -74,13 +78,12 @@ export default function Submit() {
             ref={noteInput}
             aria-label="Add a note"
             placeholder="Add a note"
-            type="note"
             maxLength={100}
             disabled={session ? false : true}
             className={cn(
               session
-                ? 'mt-2 block w-full rounded-lg bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-600 dark:text-gray-200'
-                : 'mt-2 block w-full rounded-lg bg-gray-200 px-4 py-2 pr-32 dark:bg-gray-700'
+                ? 'mt-2 block w-full rounded-lg bg-white px-4 py-2 pr-32 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-500 dark:text-gray-200'
+                : 'mt-2 block w-full rounded-lg bg-gray-200 px-4 py-2 pr-32 dark:bg-gray-800'
             )}
             onKeyUp={() => (event ? onChangeCount(event) : 0)}
           />
@@ -103,6 +106,7 @@ export default function Submit() {
             and profile picture.
           </p>
         ) : null}
+        <Toaster />
       </div>
     </>
   )
