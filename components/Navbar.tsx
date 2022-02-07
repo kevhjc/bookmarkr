@@ -60,7 +60,7 @@ export default function Navbar() {
               <a
                 aria-label="Sign in"
                 className={
-                  'cursor-pointer gap-2 rounded bg-blue-500 p-2 px-2 font-medium text-white transition-all hover:bg-blue-700 hover:text-white dark:text-gray-200 dark:hover:bg-blue-700'
+                  'cursor-pointer rounded bg-blue-500 p-2 px-2 font-medium text-white transition-all hover:bg-blue-700 hover:text-white dark:text-gray-200 dark:hover:bg-blue-700'
                 }
                 onClick={() => signIn('github')}
               >
@@ -70,7 +70,7 @@ export default function Navbar() {
               <a
                 aria-label="Sign out"
                 className={
-                  'cursor-pointer gap-2 rounded p-2 px-2 font-medium text-gray-900 transition-all hover:bg-red-100 dark:text-gray-200 dark:hover:bg-red-600'
+                  'cursor-pointer rounded p-2 px-2 font-medium text-gray-900 transition-all hover:bg-red-100 dark:text-gray-200 dark:hover:bg-red-600'
                 }
                 onClick={() => signOut()}
               >
