@@ -47,20 +47,20 @@ export default function Navbar() {
     <div className="mb-8 flex flex-wrap text-lg">
       <div className="mb-4 w-full md:w-1/2 lg:w-1/2">
         <div className="md-justify-start flex h-12 items-center justify-center md:justify-start lg:justify-start">
-          <nav className="space-x-4 md:block">
+          <nav className="space-x-4">
             <LogoNavItem href="/" text="Bookmarkr" />
           </nav>
         </div>
       </div>
       <div className="w-full md:w-1/2 lg:w-1/2">
         <div className="text-grey-dark flex h-12 items-center justify-center md:justify-end lg:justify-end">
-          <nav className="space-x-4 md:block">
+          <nav className="space-x-4">
             <NavItem href="/about" text="About" />
             {!session ? (
               <a
                 aria-label="Sign in"
                 className={
-                  'cursor-pointer rounded bg-blue-500 p-2 px-2 font-medium text-white transition-all hover:bg-blue-700 hover:text-white dark:text-gray-200 dark:hover:bg-blue-700'
+                  'cursor-pointer rounded bg-blue-500 p-2 px-3 font-medium text-white transition-all hover:bg-blue-700 hover:text-white dark:bg-blue-600 dark:text-gray-200 dark:hover:bg-blue-800'
                 }
                 onClick={() => signIn('github')}
               >
@@ -70,7 +70,7 @@ export default function Navbar() {
               <a
                 aria-label="Sign out"
                 className={
-                  'cursor-pointer rounded p-2 px-2 font-medium text-gray-900 transition-all hover:bg-red-100 dark:text-gray-200 dark:hover:bg-red-600'
+                  'cursor-pointer rounded p-2 px-3 font-medium text-gray-900 transition-all hover:bg-red-100 dark:text-gray-200 dark:hover:bg-red-600'
                 }
                 onClick={() => signOut()}
               >
