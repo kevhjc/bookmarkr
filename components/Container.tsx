@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useTheme } from 'next-themes'
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'

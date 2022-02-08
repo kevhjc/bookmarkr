@@ -30,8 +30,8 @@ export default function Bookmark() {
       </FadeIn>
     )
   return (
-    <div className="mt-4 space-y-8">
-      <FadeIn>
+    <FadeIn>
+      <div className="mt-4 space-y-8">
         {bookmarks?.map((bookmark: any) => (
           <div
             key={bookmark.id}
@@ -73,7 +73,7 @@ export default function Bookmark() {
             </div>
           </div>
         ))}
-      </FadeIn>
-    </div>
+      </div>
+    </FadeIn>
   )
 }
