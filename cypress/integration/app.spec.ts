@@ -1,6 +1,6 @@
 describe('App', () => {
   before(() => {
-    cy.visit('http://localhost:3000')
+    cy.visit('https://www.bookmarkr.link/')
   })
 
   it('should render page', () => {
