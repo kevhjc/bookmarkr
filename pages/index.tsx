@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import FadeIn from 'react-fade-in'
 
 import Container from '../components/Container'
 import Submit from '../components/Submit'
@@ -10,12 +11,14 @@ export default function Home() {
   }
 
   return (
-    <Container>
-      <Head>
-        <title>{meta.title}</title>
-      </Head>
-      <Submit />
-      <Bookmark />
-    </Container>
+    <FadeIn>
+      <Container>
+        <Head>
+          <title>{meta.title}</title>
+        </Head>
+        <Submit />
+        <Bookmark />
+      </Container>
+    </FadeIn>
   )
 }
