@@ -9,7 +9,7 @@
     "lint": "next lint",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "db:dev": "pscale connect bookmarkr-db dev --port 3309",
+    "db:dev": "pscale connect bookmarkr-db dev --port 3309 && pscale connect bookmarkr-db shadow --port 3310",
     "db:prod": "pscale connect bookmarkr-db main --port 3309"
   },
   "dependencies": {
