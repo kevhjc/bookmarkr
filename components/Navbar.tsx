@@ -16,7 +16,7 @@ function LogoNavItem({ href, text }: INavProps) {
     <NextLink href={href}>
       <a
         className={
-          'roundedp-1 flex items-center gap-2 px-2 pl-1 font-bold text-gray-900 transition-all hover:bg-blue-100  dark:text-gray-900 dark:hover:bg-blue-800 dark:hover:text-gray-200'
+          'flex items-center gap-2 rounded p-1 px-2 pl-1 font-bold text-gray-900 transition-all hover:bg-blue-100  dark:text-gray-200 dark:hover:bg-blue-800'
         }
       >
         <Image src="/logo.svg" alt="Bookmarkr Logo" width={20} height={20} />
