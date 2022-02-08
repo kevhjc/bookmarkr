@@ -53,6 +53,10 @@ export default function About() {
             <b>{`Deployment: `}</b>
             {`Vercel`}
           </ul>
+          <ul className="px-6 text-center text-lg">
+            <b>{`Testing: `}</b>
+            {`Cypress`}
+          </ul>
           <h1 className="mt-12 mb-2 text-center text-4xl font-black leading-snug">
             {`Who made it?`}
           </h1>

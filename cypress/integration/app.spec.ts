@@ -3,7 +3,7 @@ describe('App', () => {
     cy.visit('http://localhost:3000')
   })
 
-  it('should render navbar', () => {
-    cy.contains('Bookmarkr')
+  it('should render page', () => {
+    cy.get('div').should('contain', 'Bookmarkr')
   })
 })

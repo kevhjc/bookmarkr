@@ -11,3 +11,4 @@ Bookmarkr is a social bookmarking message board to share hyperlinks to portfolio
 - **ORM:** Prisma
 - **Auth:** NextAuth.js
 - **Deployment:** Vercel
+- **Testing:** Cypress
