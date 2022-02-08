@@ -11,14 +11,14 @@ export default function Home() {
   }
 
   return (
-    <FadeIn>
-      <Container>
-        <Head>
-          <title>{meta.title}</title>
-        </Head>
+    <Container>
+      <Head>
+        <title>{meta.title}</title>
+      </Head>
+      <FadeIn>
         <Submit />
         <Bookmark />
-      </Container>
-    </FadeIn>
+      </FadeIn>
+    </Container>
   )
 }

@@ -3,8 +3,7 @@ import { useSession } from 'next-auth/react'
 import { useSWRConfig } from 'swr'
 import cn from 'classnames'
 import toast, { Toaster } from 'react-hot-toast'
-
-const notify = () => toast('Here is your toast.')
+import FadeIn from 'react-fade-in'
 
 export default function Submit() {
   const { data: session } = useSession()
@@ -45,7 +44,7 @@ export default function Submit() {
   }
 
   return (
-    <>
+    <FadeIn delay={100}>
       <div className="my-4 w-full rounded-lg border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
         <form
           className="relative my-1"
@@ -108,6 +107,6 @@ export default function Submit() {
         ) : null}
         <Toaster />
       </div>
-    </>
+    </FadeIn>
   )
 }
