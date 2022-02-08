@@ -1,10 +1,6 @@
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import NextLink from 'next/link'
-import { useRouter } from 'next/router'
-import { useTheme } from 'next-themes'
 import { useSession, signIn, signOut } from 'next-auth/react'
-import cn from 'classnames'
 
 interface INavProps {
   href: string
