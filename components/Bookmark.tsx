@@ -64,7 +64,8 @@ export default function Bookmark() {
                     className="rounded-full"
                   />
                 ) : null}
-                {bookmark.user} –{' '}
+                {bookmark.user}
+                {` – `}
                 {format(
                   new Date(bookmark.createdAt),
                   "MMM d, yyyy '/' h:mm bb"
