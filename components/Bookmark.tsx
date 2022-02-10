@@ -58,8 +58,8 @@ export default function Bookmark() {
                 {bookmark.image ? (
                   <Image
                     alt="User Avatar"
-                    height={22}
-                    width={22}
+                    height="22"
+                    width="22"
                     src={bookmark.image}
                     className="rounded-full"
                   />
