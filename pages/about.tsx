@@ -23,7 +23,7 @@ export default function About() {
             {` to portfolios, tools, etc. from around the web. Sign in with GitHub to post a link!`}
           </p>
           <h1 className="mt-12 mb-2 text-center text-4xl font-black leading-snug">
-            {`What's the Stack?`}
+            {`What's the stack?`}
           </h1>
           <ul className="px-6 text-center text-lg">
             <b>{`Language: `}</b>
