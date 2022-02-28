@@ -66,10 +66,7 @@ export default function Bookmark() {
                 ) : null}
                 {bookmark.user}
                 {` – `}
-                {format(
-                  new Date(bookmark.createdAt),
-                  "MMM d, yyyy '/' h:mm bb"
-                )}
+                {format(new Date(bookmark.createdAt), 'MMM d, yyyy')}
               </div>
             </div>
           </div>
