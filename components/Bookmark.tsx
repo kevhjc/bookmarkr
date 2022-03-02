@@ -35,7 +35,7 @@ export default function Bookmark() {
         {bookmarks?.map((bookmark: any) => (
           <div
             key={bookmark.id}
-            className="mx-auto mt-8 w-full transform gap-4 whitespace-normal rounded-lg border border-neutral-200 bg-neutral-50 p-1 transition-all duration-300 hover:shadow-sm dark:border-neutral-700 dark:bg-neutral-800/60"
+            className="mx-auto mt-8 w-full transform gap-4 whitespace-normal rounded-lg border border-neutral-200 bg-neutral-50 p-1 transition-all duration-300 hover:shadow-sm dark:border-neutral-700 dark:bg-neutral-800/40"
           >
             <div className="mt-2 px-4 py-2">
               <h3>
