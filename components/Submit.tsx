@@ -61,13 +61,13 @@ export default function Submit() {
             disabled={session ? false : true}
             className={cn(
               session
-                ? 'mt-1 block w-full rounded-lg bg-white px-4 py-2 pr-32 text-neutral-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-500 dark:text-neutral-200'
-                : 'mt-1 block w-full rounded-lg bg-neutral-200 px-4 py-2 pr-32 dark:bg-neutral-700'
+                ? 'mt-1 block w-full rounded-lg bg-white px-4 py-2 pr-32 text-neutral-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-600 dark:text-neutral-200'
+                : 'mt-1 block w-full rounded-lg bg-neutral-200 px-4 py-2 pr-32 dark:bg-neutral-700/50'
             )}
           />
           {session ? (
             <button
-              className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-neutral-200 px-4 font-medium text-neutral-900 transition-all hover:bg-neutral-300 dark:bg-neutral-800/80 dark:text-neutral-200 dark:hover:bg-neutral-900"
+              className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-neutral-200 px-4 font-medium text-neutral-900 transition-all hover:bg-neutral-300 dark:bg-neutral-800/80 dark:text-neutral-200 dark:hover:bg-neutral-800/80"
               type="submit"
             >
               Submit
@@ -81,8 +81,8 @@ export default function Submit() {
             disabled={session ? false : true}
             className={cn(
               session
-                ? 'mt-2 block w-full rounded-lg bg-white px-4 py-2 pr-32 text-neutral-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-500 dark:text-neutral-200'
-                : 'mt-2 block w-full rounded-lg bg-neutral-200 px-4 py-2 pr-32 dark:bg-neutral-700'
+                ? 'mt-2 block w-full rounded-lg bg-white px-4 py-2 pr-32 text-neutral-900 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-600 dark:text-neutral-200'
+                : 'mt-2 block w-full rounded-lg bg-neutral-200 px-4 py-2 pr-32 dark:bg-neutral-700/50'
             )}
             onKeyUp={() => (event ? onChangeCount(event) : 0)}
           />
