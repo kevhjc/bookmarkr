@@ -13,7 +13,7 @@ export default function Bookmark() {
     return (
       <FadeIn delay={200}>
         <div className="mx-auto py-12 px-6">
-          <h1 className="flex items-center justify-center text-2xl font-black leading-snug text-gray-900 dark:text-gray-200">
+          <h1 className="flex items-center justify-center text-2xl font-black leading-snug text-neutral-900 dark:text-neutral-200">
             Loading...
           </h1>
         </div>
@@ -23,7 +23,7 @@ export default function Bookmark() {
     return (
       <FadeIn delay={200}>
         <div className="mx-auto py-12 px-6">
-          <h1 className="flex items-center justify-center text-2xl font-black leading-snug text-gray-900 dark:text-gray-200">
+          <h1 className="flex items-center justify-center text-2xl font-black leading-snug text-neutral-900 dark:text-neutral-200">
             Uh oh, something went wrong
           </h1>
         </div>
@@ -35,7 +35,7 @@ export default function Bookmark() {
         {bookmarks?.map((bookmark: any) => (
           <div
             key={bookmark.id}
-            className="mx-auto mt-8 w-full transform gap-4 whitespace-normal rounded-lg border border-gray-200 bg-gray-50 p-1 transition-all duration-300 hover:shadow-sm dark:border-gray-600 dark:bg-gray-800"
+            className="mx-auto mt-8 w-full transform gap-4 whitespace-normal rounded-lg border border-neutral-200 bg-neutral-50 p-1 transition-all duration-300 hover:shadow-sm dark:border-neutral-600 dark:bg-neutral-700"
           >
             <div className="mt-2 px-4 py-2">
               <h3>
@@ -50,11 +50,11 @@ export default function Bookmark() {
                 </Link>
               </h3>
               <div className="my-2 flex flex-row pt-2">
-                <p className="mb-2 max-w-2xl tracking-tight text-gray-700 dark:text-gray-200">
+                <p className="mb-2 max-w-2xl tracking-tight text-neutral-700 dark:text-neutral-200">
                   {bookmark.note}
                 </p>
               </div>
-              <div className="max-w-2x1 flex items-center gap-2 border-t pt-4 pb-2 font-mono text-sm tracking-tight text-gray-500 dark:border-gray-600 dark:text-gray-400">
+              <div className="max-w-2x1 flex items-center gap-2 border-t pt-4 pb-2 font-mono text-sm tracking-tight text-neutral-500 dark:border-neutral-600 dark:text-neutral-400">
                 {bookmark.image ? (
                   <Image
                     alt="User Avatar"
