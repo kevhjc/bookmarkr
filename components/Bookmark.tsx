@@ -35,7 +35,7 @@ export default function Bookmark() {
         {bookmarks?.map((bookmark: any) => (
           <div
             key={bookmark.id}
-            className="mx-auto mt-8 w-full transform gap-4 whitespace-normal rounded-lg border border-neutral-200 bg-neutral-50 p-1 transition-all duration-300 hover:shadow-sm dark:border-neutral-600 dark:bg-neutral-700"
+            className="mx-auto mt-8 w-full transform gap-4 whitespace-normal rounded-lg border border-neutral-200 bg-neutral-50 p-1 transition-all duration-300 hover:shadow-sm dark:border-neutral-600 dark:bg-neutral-800/60"
           >
             <div className="mt-2 px-4 py-2">
               <h3>
@@ -43,7 +43,7 @@ export default function Bookmark() {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="break-words text-lg font-medium text-blue-500 underline hover:no-underline dark:text-blue-300"
+                    className="break-words text-lg font-medium text-blue-500 underline hover:no-underline dark:text-blue-400"
                   >
                     {bookmark.url}
                   </a>
