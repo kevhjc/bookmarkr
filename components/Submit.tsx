@@ -45,7 +45,7 @@ export default function Submit() {
 
   return (
     <FadeIn delay={100}>
-      <div className="my-4 w-full rounded-lg border border-blue-200 bg-blue-50 p-4 duration-300 hover:shadow-xl dark:border-neutral-700 dark:bg-neutral-800/80">
+      <div className="w-full p-4 my-4 duration-300 border border-blue-200 rounded-lg bg-blue-50 hover:shadow-xl dark:border-neutral-700 dark:bg-neutral-800/80">
         <form
           className="relative my-1"
           action="#"
@@ -67,7 +67,7 @@ export default function Submit() {
           />
           {session ? (
             <button
-              className="w-22 absolute right-1 top-1 flex h-8 items-center justify-center rounded bg-neutral-200 px-4 font-medium text-neutral-900 transition-all hover:bg-neutral-300 dark:bg-neutral-800/80 dark:text-neutral-200 dark:hover:bg-neutral-800/80"
+              className="absolute flex items-center justify-center h-8 px-4 font-medium transition-all rounded w-22 right-1 top-1 bg-neutral-200 text-neutral-900 hover:bg-neutral-300 dark:bg-neutral-800/80 dark:text-neutral-200 dark:hover:bg-neutral-800/80"
               type="submit"
             >
               Submit
@@ -99,10 +99,10 @@ export default function Submit() {
           </span>
         </form>
         {!session ? (
-          <p className="mt-4 break-words font-mono text-sm text-neutral-600 dark:text-neutral-200">
-            Hey there! Sign in with <b>GitHub</b> to add a bookmark to the
-            message board. Your information is only used to display your name
-            and profile picture.
+          <p className="mt-4 font-mono text-sm break-words text-neutral-600 dark:text-neutral-200">
+            Hey there! Sign in with <b>GitHub</b> to post a link to the message
+            board. Your information is only used to display your name and
+            profile picture.
           </p>
         ) : null}
         <Toaster />

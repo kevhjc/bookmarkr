@@ -20,43 +20,8 @@ export default function About() {
             <span className="p-1 font-mono bg-yellow-200 rounded dark:bg-yellow-500 dark:text-neutral-800">
               hyperlinks
             </span>
-            {` to portfolios, tools, etc. from around the web. Sign in with GitHub to post a link!`}
+            {` to portfolios, resources, etc. from around the web. Sign in with GitHub to post a link!`}
           </p>
-          <h1 className="mt-12 mb-2 text-4xl font-black leading-snug text-center">
-            {`What's the stack?`}
-          </h1>
-          <ul className="px-6 text-lg text-center">
-            <b>{`Language: `}</b>
-            {`TypeScript`}
-          </ul>
-          <ul className="px-6 text-lg text-center">
-            <b>{`Framework: `}</b>
-            {`Next.js`}
-          </ul>
-          <ul className="px-6 text-lg text-center">
-            <b>{`Styling: `}</b>
-            {`Tailwind CSS`}
-          </ul>
-          <ul className="px-6 text-lg text-center ">
-            <b>{`Database: `}</b>
-            {`PlanetScale`}
-          </ul>
-          <ul className="px-6 text-lg text-center">
-            <b>{`ORM: `}</b>
-            {`Prisma`}
-          </ul>
-          <ul className="px-6 text-lg text-center">
-            <b>{`Auth: `}</b>
-            {`NextAuth.js`}
-          </ul>
-          <ul className="px-6 text-lg text-center">
-            <b>{`Deployment: `}</b>
-            {`Vercel`}
-          </ul>
-          <ul className="px-6 text-lg text-center">
-            <b>{`Testing: `}</b>
-            {`Cypress`}
-          </ul>
           <h1 className="mt-12 mb-2 text-4xl font-black leading-snug text-center">
             {`Who made it?`}
           </h1>
