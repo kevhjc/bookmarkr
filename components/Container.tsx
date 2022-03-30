@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 
 interface IContainerProps {
   title?: string
@@ -22,7 +21,7 @@ export default function Container(props: IContainerProps) {
   }
 
   return (
-    <div className="container mx-auto max-w-3xl p-8">
+    <div className="container max-w-3xl p-8 mx-auto mb-10">
       <Head>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
@@ -45,7 +44,7 @@ export default function Container(props: IContainerProps) {
       </Head>
       <Navbar />
       <main className="flex flex-col justify-center">{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

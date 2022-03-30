@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import useSWR from 'swr'
@@ -62,7 +62,7 @@ export default function Bookmark() {
                 </p>
               </div>
               <div className="flex items-center gap-2 pt-4 pb-2 font-mono text-sm tracking-tight border-t max-w-2x1 text-neutral-500 dark:border-neutral-600 dark:text-neutral-400">
-                {bookmark.image ? (
+                {bookmark.image && (
                   <Image
                     alt="User Avatar"
                     height="22"
@@ -70,7 +70,7 @@ export default function Bookmark() {
                     src={bookmark.image}
                     className="rounded-full"
                   />
-                ) : null}
+                )}
                 {bookmark.user}
                 {` – `}
                 {format(new Date(bookmark.createdAt), 'MMM d, yyyy')}
@@ -78,16 +78,16 @@ export default function Bookmark() {
             </div>
           </div>
         ))}
-        {bookmarkNum < bookmarks.length ? (
+        {bookmarkNum < bookmarks.length && (
           <div className="flex justify-center">
             <button
-              className="p-2 px-6 font-bold transition-all rounded cursor-pointer bg-neutral-200 text-neutral-600 hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
+              className="p-2 px-6 text-sm font-medium transition-all rounded cursor-pointer bg-neutral-200 text-neutral-600 hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
               onClick={handleLoadMoreBookmarks}
             >
-              &darr;
+              Load more &darr;
             </button>
           </div>
-        ) : null}
+        )}
       </div>
     </FadeIn>
   )
