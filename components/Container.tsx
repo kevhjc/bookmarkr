@@ -44,7 +44,6 @@ export default function Container(props: IContainerProps) {
       </Head>
       <Navbar />
       <main className="flex flex-col justify-center">{children}</main>
-      {/* <Footer /> */}
     </div>
   )
 }
