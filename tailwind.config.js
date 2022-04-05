@@ -5,12 +5,12 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+      serif: ['Newsreader', 'serif'],
+      mono: ['IBM Plex Mono', 'monospace'],
+    },
     extend: {},
-  },
-  fontFamily: {
-    sans: ['Inter', 'sans-serif'],
-    serif: ['Newsreader', 'serif'],
-    mono: ['IBM Plex Mono', 'monospace'],
   },
   plugins: [],
 }
