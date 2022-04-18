@@ -101,8 +101,7 @@ export default function Submit() {
         {!session ? (
           <p className="mt-4 font-mono text-sm break-words text-neutral-600 dark:text-neutral-200">
             Hey there! Sign in with <b>GitHub</b> to post a link to the message
-            board. Your information is only used to display your name and
-            profile picture.
+            board.
           </p>
         ) : null}
         <Toaster />
