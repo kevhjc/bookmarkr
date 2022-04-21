@@ -13,7 +13,7 @@ export default function Bookmark() {
   const [bookmarkNum, setBookmarkNum] = useState<number>(10)
 
   const handleLoadMoreBookmarks = () => {
-    setBookmarkNum((prevbookmarkNum) => prevbookmarkNum + 10)
+    setBookmarkNum((prevBookmarkNum) => prevBookmarkNum + 10)
   }
 
   if (!bookmarks)
@@ -84,7 +84,7 @@ export default function Bookmark() {
               className="p-2 px-6 text-sm font-medium transition-all rounded cursor-pointer bg-neutral-200 text-neutral-600 hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
               onClick={handleLoadMoreBookmarks}
             >
-              Load more &darr;
+              Load more
             </button>
           </div>
         )}
